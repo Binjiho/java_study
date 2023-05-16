@@ -1,0 +1,12 @@
+package org.java.varable;
+
+public class VarEx03 {
+	public static void main(String[] args) {
+		System.out.println("참조형 타입(object)");
+		
+		String str1 = new String ("str1");
+		String str2 = "->str2";
+		System.out.println(str1.concat(str2));
+		System.out.println(str1.length());
+	}
+}

@@ -1,0 +1,16 @@
+package org.java.varable;
+
+import java.util.Scanner;
+
+//java.lang 패키지의 클래스는 자동 import된다.
+
+public class ScannerEx01 {
+	public static void main(String[] args) {
+//		System.out.println("Scanner클래스");
+//		
+//		Scanner scn = new Scanner(System.in);
+//		
+//		String str1 = scn.next();
+//		System.out.println(str1);
+	}
+}
