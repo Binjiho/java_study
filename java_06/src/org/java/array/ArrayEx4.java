@@ -26,7 +26,9 @@ public class ArrayEx4 {
         for(int i=0;i<arrayList.size();i++) {
         	//remove index
         	arrayList.remove(i);        	
-        	//list to array
+        	for (int j=0; j<arrayList.size();j++) {
+        		arrayList.remove(j);
+        	}
         	int[] array1 = getback(arrayList);
         	        		
         }
@@ -35,7 +37,16 @@ public class ArrayEx4 {
     }
 	
 	public static void main(String[] args) {
-		threeSol(fixed);
+		
+		int[] tmpArr = new int[10];
+		for (int i=0; i<10; i++){
+		tmpArr[i]=i+1;
+		}
+		for (int i=0; i<tmpArr.length; i++){
+		System.out.println(tmpArr[i]);
+		}
+		
+//		threeSol(fixed);
 	}
 	
 }
