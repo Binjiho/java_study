@@ -7,6 +7,15 @@
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.java.oopEx.ModifySub1"/>
+    <fullyQualifiedTypeName name="org.java.modifyEx.ModifySub2"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="org.project.dto.BoardDto"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="org.project.dto.MemberDto"/>
+    <fullyQualifiedTypeName name="org.java.constructorEx.ConstructorEx"/>
+    <fullyQualifiedTypeName name="org.project.controller.CartController"/>
+    <fullyQualifiedTypeName name="org.project.dto.CartDto"/>
+    <fullyQualifiedTypeName name="org.java.service.MemberService"/>
+    <fullyQualifiedTypeName name="org.java.abscract.AbstractSub"/>
 </qualifiedTypeNameHistroy>
