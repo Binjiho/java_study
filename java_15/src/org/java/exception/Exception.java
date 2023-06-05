@@ -31,5 +31,16 @@ public class Exception {
 		}
 		
 		System.out.println("정상 실행");
+		
+		int[] intArr = new int[5];
+
+		try {
+			System.out.println(intArr[5]);
+		}catch(ArithmeticException e) {
+			e.printStackTrace();
+		}finally {
+			System.out.println("무조건 실행");
+		}
+		System.out.println("프로그램 정상 실행");
 	}
 }

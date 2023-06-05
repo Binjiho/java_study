@@ -1,11 +1,15 @@
 package org.java.exception;
 
+import java.sql.Connection;
+
 public class DBConnectionMain {
 	public static void main(String[] args) {
-		if(DBConnection.getConnection()!=null) {
-			System.out.println("connection ok");
+		Connection conn = DBConnection.getConnection();
+		
+		if(conn !=null) {
+			System.out.println(conn);
 		}else {
-			System.out.println("connection fail");
+			System.out.println("conn is null");
 		}
 	}
 }

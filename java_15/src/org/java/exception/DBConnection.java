@@ -14,14 +14,15 @@ public class DBConnection {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url,id,pw);
+			System.out.println("Connection Success");
 			
-			try {
-				conn = DriverManager.getConnection(url,id,pw);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+			System.out.println("Driver not found");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Connection fail");
 		}
 		return conn;
 	}
