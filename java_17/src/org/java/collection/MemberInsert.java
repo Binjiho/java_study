@@ -10,7 +10,7 @@ public class MemberInsert implements MemberService{
 		
 	}
 	
-	public MemberDto generateObject(Long id, String userId, String userPw) {
+	public MemberDto generateMember(Long id, String userId, String userPw) {
 		MemberDto result = new MemberDto(id,userId,userPw);
 		return result;
 	}
