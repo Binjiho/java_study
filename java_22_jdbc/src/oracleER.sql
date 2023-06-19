@@ -1,0 +1,20 @@
+
+/* Drop Tables */
+
+DROP TABLE SYSTEM.MEMBER CASCADE CONSTRAINTS;
+
+
+
+
+/* Create Tables */
+
+CREATE TABLE SYSTEM.MEMBER
+(
+	USERID varchar2(100 char) NOT NULL,
+	USERPW varchar2(100 char) NOT NULL,
+	EMAIL varchar2(255 char) NOT NULL,
+	CONSTRAINT SYS_C007006 PRIMARY KEY (USERID)
+);
+
+
+
