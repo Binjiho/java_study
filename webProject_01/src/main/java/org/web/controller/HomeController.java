@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("*.do")
+@WebServlet("*.do") //컨트롤러 설정(controller)
 public class HomeController extends HttpServlet{
 
 	@Override
