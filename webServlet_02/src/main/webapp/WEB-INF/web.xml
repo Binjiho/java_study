@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>webServlet_02</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 서블릿 생성 패턴1 단점: 페이지가 늘어날때마다 작업 해주어야해서 관리 힘듦 -->
+  <!--
+  <servlet>
+  	<servlet-name>index</servlet-name>
+  	<servlet-class>org.web.controller.IndexController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>index</servlet-name>
+  	<url-pattern>/index.do</url-pattern>
+  </servlet-mapping>
+  -->
+ 
+  <!-- 서블릿 생성 패턴2 FrontController Spring -->
+  <!--
+  <servlet>
+  	<servlet-name>base</servlet-name>
+  	<servlet-class>org.web.controller.BaseController</servlet-class>
+  </servlet>
+    <servlet-mapping>
+  	<servlet-name>base</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  -->
+</web-app>
