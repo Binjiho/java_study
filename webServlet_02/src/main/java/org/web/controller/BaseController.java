@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.web.service.EmployeeInsert;
-import org.web.service.EmployeeService;
+import org.web.service.MemberInsert;
+import org.web.service.MemberService;
 
 @WebServlet("*.do")
 public class BaseController extends HttpServlet{
@@ -19,8 +19,13 @@ public class BaseController extends HttpServlet{
 		System.out.println("init");
 	}
 	@Override
+	public void destroy() {
+		System.out.println("destroy");
+	}
+	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("get");
+//		System.out.println("get");
 		doPost(request,response);
 	}
 	@Override
@@ -38,16 +43,19 @@ public class BaseController extends HttpServlet{
 		System.out.println(basicUrl);
 		
 		String returnUrl = "";
-		EmployeeService service = null;
+		MemberService service = null;
 
 		if (basicUrl.equals("/index.do")) {
 			System.out.println("index.jsp페이지 이동");
 			returnUrl = "/index.jsp";
 		} else if (basicUrl.equals("/join.do")) {
-			System.out.println("join.jsp페이지 이동");
+			System.out.println("joinView.jsp페이지 이동");
 			returnUrl = "/joinView.jsp";
-		} else if (basicUrl.equals("/joinOk.do")) {
-			service = new EmployeeInsert();
+		} else if (basicUrl.equals("/write.do")) {
+			System.out.println("writeView.jsp페이지 이동");
+			returnUrl = "/writeView.jsp";
+		} else if (basicUrl.equals("/joinWrite.do")) {
+			service = new MemberInsert();
 			service.executeQueryService(request, response);
 			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
 		} else {
@@ -58,8 +66,5 @@ public class BaseController extends HttpServlet{
 		RequestDispatcher dispatcher = request.getRequestDispatcher(returnUrl);
 		dispatcher.forward(request, response);
 	}
-	@Override
-	public void destroy() {
-		System.out.println("destroy");
-	}
+
 }

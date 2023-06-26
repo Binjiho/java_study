@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JoinView</title>
+<title>WriteView</title>
 </head>
 <body>
-	<form action="joinWrite.do">
-		아이디: <input type="text" name="userid"/><br>
-		비밀번호: <input type="password" name="userpw"/><br>
-		휴대폰번호: <input type="text" name="htel"/><br>
-		<input type="submit" value="회원가입실행"/>
+	<form action="joinOk.do">
+		제목: <input type="text" name="title"/><br>
+		내용: <input type="text" name="content"/><br>
+		작성자: <input type="text" name="writer"/><br>
+		<input type="submit" value="게시글작성실행"/>
 	</form>
 	<div>
 		<a href="index.do">메인 페이지</a>

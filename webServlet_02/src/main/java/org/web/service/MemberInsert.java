@@ -6,18 +6,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.web.dao.EmployeeDao;
+import org.web.dao.MemberDao;
 
-public class EmployeeInsert implements EmployeeService {
+public class MemberInsert implements MemberService {
 	@Override
 	public void executeQueryService(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String depart = request.getParameter("depart");
+		String userid = request.getParameter("userid");
+		String userpw = request.getParameter("userpw");
+		String htel = request.getParameter("htel");
 		
-		EmployeeDao dao = EmployeeDao.getInstance();
-		int rs = dao.insert(name,email,depart);
+		MemberDao dao = MemberDao.getInstance();
+		int rs = dao.insert(userid,userpw,htel);
 		
 		String returnUrl = "";
 		if(rs!=1) {
