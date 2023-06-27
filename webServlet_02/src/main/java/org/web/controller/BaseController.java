@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.web.service.MemberDetail;
 import org.web.service.MemberInsert;
+import org.web.service.MemberSelect;
 import org.web.service.MemberService;
 
 @WebServlet("*.do")
@@ -48,16 +50,30 @@ public class BaseController extends HttpServlet{
 		if (basicUrl.equals("/index.do")) {
 			System.out.println("index.jsp페이지 이동");
 			returnUrl = "/index.jsp";
+		
 		} else if (basicUrl.equals("/join.do")) {
 			System.out.println("joinView.jsp페이지 이동");
 			returnUrl = "/joinView.jsp";
+		
 		} else if (basicUrl.equals("/write.do")) {
 			System.out.println("writeView.jsp페이지 이동");
 			returnUrl = "/writeView.jsp";
+			
 		} else if (basicUrl.equals("/joinWrite.do")) {
 			service = new MemberInsert();
 			service.executeQueryService(request, response);
 			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
+		
+		} else if (basicUrl.equals("/list.do")) {
+			service = new MemberSelect();
+			service.executeQueryService(request, response);
+			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
+		
+		} else if (basicUrl.equals("/detailView.do")) {
+			service = new MemberDetail();
+			service.executeQueryService(request, response);
+			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
+		
 		} else {
 			returnUrl = "/notPage.jsp";
 		}
