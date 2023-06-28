@@ -147,4 +147,39 @@ public class MemberDao {
 		return result;
 	}
 
+	public int update(Long id, String userid, String userpw, String htel) {
+		int rs = 0;
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		String query = null;
+		
+		try {
+			conn = DBConnection.getConnection();
+			query = "update MEMBER "
+					+"set userid=?, userpw=?, htel=? "
+					+"where id=?";
+			pstm = conn.prepareStatement(query);
+			pstm.setString(1, userid);
+			pstm.setString(2, userpw);
+			pstm.setString(3, htel);
+			pstm.setLong(4, id);
+			rs = pstm.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstm!=null) {
+					pstm.close();
+				}
+				if(conn!=null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return rs;
+	}
+
 }

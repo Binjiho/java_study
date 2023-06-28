@@ -24,8 +24,17 @@
 			<th><%=items.getHtel() %></th>
 			<th><%=items.getCreate_date() %></th>
 		</tr>
-		
 	</table>
+	
+	<form action="updateOk.do">
+		<input type="hidden" name="id" value=<%=items.getId() %>><br>
+		유저아이디: <input type="text" name="userid" value=<%=items.getUserid() %>><br>
+		유저비밀번호: <input type="text" name="userpw" value=<%=items.getUserpw() %>><br>
+		핸드폰번호: <input type="text" name="htel" value=<%=items.getHtel() %>><br>
+		<input type="submit" value="수정"/>
+		<input type="button" value="삭제" onclick="deletePost()"/>
+	</form>
+	
 	<div>
 		<a href="index.do">메인 페이지</a>
 		<a href="join.do">회원가입 페이지</a>
@@ -34,4 +43,5 @@
 	</div>
 	
 </body>
+
 </html>

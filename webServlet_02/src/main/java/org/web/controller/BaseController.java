@@ -13,6 +13,7 @@ import org.web.service.MemberDetail;
 import org.web.service.MemberInsert;
 import org.web.service.MemberSelect;
 import org.web.service.MemberService;
+import org.web.service.MemberUpdate;
 
 @WebServlet("*.do")
 public class BaseController extends HttpServlet{
@@ -64,6 +65,11 @@ public class BaseController extends HttpServlet{
 			service.executeQueryService(request, response);
 			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
 		
+		} else if (basicUrl.equals("/updateOk.do")) {
+			service = new MemberUpdate();
+			service.executeQueryService(request, response);
+			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
+			
 		} else if (basicUrl.equals("/list.do")) {
 			service = new MemberSelect();
 			service.executeQueryService(request, response);
