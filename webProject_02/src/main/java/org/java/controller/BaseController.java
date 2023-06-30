@@ -9,13 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.java.service.BoardDelete;
+import org.java.service.BoardDetail;
+import org.java.service.BoardInsert;
+import org.java.service.BoardSelect;
+import org.java.service.BoardService;
+import org.java.service.BoardUpdate;
 import org.java.service.MemberDetail;
 import org.java.service.MemberInsert;
 import org.java.service.MemberSelect;
 import org.java.service.MemberService;
 import org.java.service.MemberUpdate;
+import org.java.service.BoardDeleteOkService;
 
-@WebServlet("*.do")
+//컨트롤러 @Controller
+@WebServlet("*.do") // URL패턴
 public class BaseController extends HttpServlet{
 	@Override
 	public void init() throws ServletException {
@@ -37,55 +45,70 @@ public class BaseController extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		
 		String uri = request.getRequestURI();
-		System.out.println(uri);
-		
 		String path = request.getContextPath();
-		System.out.println(path);
-		
-		String basicUrl = uri.substring(path.length());
-		System.out.println(basicUrl);
-		
-		String returnUrl = "";
-		MemberService service = null;
+		String basicURL = uri.substring(path.length());
+		System.out.println(basicURL);
 
-		if (basicUrl.equals("/index.do")) {
-			System.out.println("index.jsp페이지 이동");
-			returnUrl = "/index.jsp";
+		String returnURL = "";
+		MemberService memberService = null;
+		BoardService boardService = null;
+
+		if (basicURL.equals("/index.do")) {
+			returnURL = "/index.jsp";
+
+		} else if (basicURL.equals("/joinView.do")) {
+			returnURL = "/joinView.jsp";
+
+		} else if (basicURL.equals("/writeView.do")) {
+			returnURL = "/writeView.jsp";
+
+		} else if (basicURL.equals("/joinOk.do")) {
+			memberService = new MemberInsert();
+			memberService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
+
+		} else if (basicURL.equals("/writeOk.do")) {
+			boardService = new BoardInsert();
+			boardService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
+
+		} else if (basicURL.equals("/memberListView.do")) {
+			memberService = new MemberSelect();
+			memberService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
 		
-		} else if (basicUrl.equals("/join.do")) {
-			System.out.println("joinView.jsp페이지 이동");
-			returnUrl = "/joinView.jsp";
-		
-		} else if (basicUrl.equals("/write.do")) {
-			System.out.println("writeView.jsp페이지 이동");
-			returnUrl = "/writeView.jsp";
+		} else if (basicURL.equals("/boardListView.do")) {
+			boardService = new BoardSelect();
+			boardService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
+
+		} else if (basicURL.equals("/boardDetail.do")) {
+			boardService = new BoardDetail();
+			boardService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
 			
-		} else if (basicUrl.equals("/joinWrite.do")) {
-			service = new MemberInsert();
-			service.executeQueryService(request, response);
-			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
-		
-		} else if (basicUrl.equals("/updateOk.do")) {
-			service = new MemberUpdate();
-			service.executeQueryService(request, response);
-			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
+		}else if (basicURL.equals("/boardUpdate.do")) {
+			boardService = new BoardUpdate();
+			boardService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
+		}else if (basicURL.equals("/boardDelete.do")) {
+			boardService = new BoardDelete();
+			boardService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
+		}else if (basicURL.equals("/boardDeleteView.do")) {
+			returnURL = "/boardDeletView.jsp";
 			
-		} else if (basicUrl.equals("/list.do")) {
-			service = new MemberSelect();
-			service.executeQueryService(request, response);
-			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
-		
-		} else if (basicUrl.equals("/detailView.do")) {
-			service = new MemberDetail();
-			service.executeQueryService(request, response);
-			returnUrl = String.valueOf(request.getAttribute("returnUrl"));
-		
+		}else if (basicURL.equals("/boardDeletOk.do")) {
+			boardService = new BoardDeleteOkService();
+			boardService.executeQueryService(request, response);
+			returnURL = (String) request.getAttribute("returnURL");
 		} else {
-			returnUrl = "/notPage.jsp";
+			returnURL = "/notPage.jsp";
 		}
-		System.out.println(returnUrl);
+		System.out.println(returnURL);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(returnUrl);
+		// 정보를 가지고 View페이지로 이동
+		RequestDispatcher dispatcher = request.getRequestDispatcher(returnURL);
 		dispatcher.forward(request, response);
 	}
 

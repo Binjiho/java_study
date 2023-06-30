@@ -1,30 +1,39 @@
 package org.java.dto;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class BoardDto {
-	private long id;
+
+	private Long id;
 	private String title;
 	private String content;
 	private String writer;
-	private Date created_date;
+	private int notice_yn;
+	private int delete_yn;
+	private Timestamp created_date; //LocalDateTime -> Timestamp
+	private Timestamp modified_date; //LocalDateTime -> Timestamp
 	
 	public BoardDto() {}
 
-	public BoardDto(int id, String title, String content, String writer, Date created_date) {
+	public BoardDto(Long id, String title, String content, String writer, int notice_yn, int delete_yn,
+			Timestamp created_date, Timestamp modified_date) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.writer = writer;
+		this.notice_yn = notice_yn;
+		this.delete_yn = delete_yn;
 		this.created_date = created_date;
+		this.modified_date = modified_date;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -52,13 +61,38 @@ public class BoardDto {
 		this.writer = writer;
 	}
 
-	public Date getCreate_date() {
+	public int getNotice_yn() {
+		return notice_yn;
+	}
+
+	public void setNotice_yn(int notice_yn) {
+		this.notice_yn = notice_yn;
+	}
+
+	public int getDelete_yn() {
+		return delete_yn;
+	}
+
+	public void setDelete_yn(int delete_yn) {
+		this.delete_yn = delete_yn;
+	}
+
+	public Date getCreated_date() {
 		return created_date;
 	}
 
-	public void setCreate_date(Date create_date) {
-		this.created_date = create_date;
+	public void setCreated_date(Timestamp created_date) {
+		this.created_date = created_date;
 	}
+
+	public Date getModified_date() {
+		return modified_date;
+	}
+
+	public void setModified_date(Timestamp modified_date) {
+		this.modified_date = modified_date;
+	}
+
 
 	
 }

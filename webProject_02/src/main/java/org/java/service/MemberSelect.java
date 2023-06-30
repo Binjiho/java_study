@@ -8,20 +8,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.java.dto.BoardDto;
-import org.java.dao.BoardDao;
+import org.java.dao.MemberDao;
+import org.java.dto.MemberDto;
 
 public class MemberSelect implements MemberService {
 	@Override
 	public void executeQueryService(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		BoardDao dao = BoardDao.getInstance();		
+		MemberDao dao = MemberDao.getInstance();		
 		String returnUrl = "";
-		ArrayList<BoardDto> items = new ArrayList<BoardDto>();
+		ArrayList<MemberDto> items = new ArrayList<MemberDto>();
 		HashMap<String,String> searchMap = new HashMap<>();
-
-		System.out.println(request);
 
 		items = dao.getList(searchMap);			
 		returnUrl = "listView.jsp";

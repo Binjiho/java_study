@@ -7,17 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.java.dao.BoardDao;
+import org.java.dao.MemberDao;
 
 public class MemberUpdate implements MemberService {
 	@Override
 	public void executeQueryService(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Long id = Long.parseLong(request.getParameter("id"));
+		Integer id = Integer.parseInt(request.getParameter("id"));
 		String userid = request.getParameter("userid");
 		String userpw = request.getParameter("userpw");
 		String htel = request.getParameter("htel");
 		
-		BoardDao dao = BoardDao.getInstance();
+		MemberDao dao = MemberDao.getInstance();
 		int rs = dao.update(id,userid,userpw,htel);
 		
 		String returnUrl = "";

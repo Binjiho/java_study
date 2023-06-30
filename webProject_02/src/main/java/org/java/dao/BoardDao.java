@@ -31,8 +31,8 @@ public class BoardDao {
 		
 		try {
 			conn = DBConnection.getConnection();
-			query = "insert into test_board(id, userid, userpw, htel) "
-					+"values(member_seq.NEXTVAL,?,?,?)";
+			query = "insert into test_board(userid, userpw, htel) "
+					+"values(?,?,?)";
 			pstm = conn.prepareStatement(query);
 			pstm.setString(1, userid);
 			pstm.setString(2, userpw);
@@ -67,7 +67,6 @@ public class BoardDao {
 			conn = DBConnection.getConnection();
 			if (!searchMap.isEmpty()) {
 				for( String strKey : searchMap.keySet() ){
-//					System.out.println(strKey + " = " + searchMap.get(strKey));
 					String strValue = searchMap.get(strKey);
 					if (strKey.equals("searchId")) {
 						query = "select * from test_board";
@@ -84,8 +83,16 @@ public class BoardDao {
 			
 			if (rs!=null) {
 				while(rs.next()) {
-					result.add(new BoardDto(rs.getInt(1), rs.getString(2)
-							,rs.getString(3),rs.getString(4), rs.getDate(5)));
+					result.add(new BoardDto(
+							rs.getLong(1)
+							,rs.getString(2)
+							,rs.getString(3)
+							,rs.getString(4)
+							,rs.getInt(5)
+							,rs.getInt(6)
+							,rs.getTimestamp(7)
+							,rs.getTimestamp(8)
+							));
 				}
 			}
 
@@ -124,8 +131,15 @@ public class BoardDao {
 			
 			if (rs!=null) {
 				while(rs.next()) {
-					result = new BoardDto(rs.getLong(1), rs.getString(2)
-							,rs.getString(3),rs.getString(4), rs.getDate(5));
+					result = new BoardDto(
+							rs.getLong(1)
+							,rs.getString(2)
+							,rs.getString(3)
+							,rs.getString(4)
+							,rs.getInt(5)
+							,rs.getInt(6)
+							,rs.getTimestamp(7)
+							,rs.getTimestamp(8));
 				}
 			}
 

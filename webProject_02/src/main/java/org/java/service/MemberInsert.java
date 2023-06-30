@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.java.dao.BoardDao;
+import org.java.dao.MemberDao;
 
 public class MemberInsert implements MemberService {
 	@Override
@@ -16,7 +17,7 @@ public class MemberInsert implements MemberService {
 		String userpw = request.getParameter("userpw");
 		String htel = request.getParameter("htel");
 		
-		BoardDao dao = BoardDao.getInstance();
+		MemberDao dao = MemberDao.getInstance();
 		int rs = dao.insert(userid,userpw,htel);
 		
 		String returnUrl = "";
