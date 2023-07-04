@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.util.Set"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.stream.Stream"/>
     <fullyQualifiedTypeName name="javax.swing.JFrame"/>
@@ -29,7 +26,6 @@
     <fullyQualifiedTypeName name="org.java.service.MemberDelete"/>
     <fullyQualifiedTypeName name="org.java.jdbcEx.DBconnect"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="org.java.dto.MemberDto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -39,7 +35,6 @@
     <fullyQualifiedTypeName name="org.java.service.member.MemberSelect"/>
     <fullyQualifiedTypeName name="org.java.service.member.MemberUpdate"/>
     <fullyQualifiedTypeName name="org.java.service.member.MemberDelete"/>
-    <fullyQualifiedTypeName name="org.java.dao.MemberDao"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
@@ -60,4 +55,9 @@
     <fullyQualifiedTypeName name="org.web.service.MemberSelect"/>
     <fullyQualifiedTypeName name="org.web.service.MemberDetail"/>
     <fullyQualifiedTypeName name="org.web.service.MemberUpdate"/>
+    <fullyQualifiedTypeName name="java.security.Timestamp"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="org.java.service.BoardService"/>
+    <fullyQualifiedTypeName name="org.java.dto.MemberDto"/>
+    <fullyQualifiedTypeName name="org.java.dao.MemberDao"/>
 </qualifiedTypeNameHistroy>

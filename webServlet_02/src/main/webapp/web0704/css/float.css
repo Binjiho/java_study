@@ -1,0 +1,175 @@
+@import url("common/reset.css");
+
+#wrap {
+    width: 100%;
+    height: auto;
+    /* border: 2px solid #ff0000; */
+    /* box-sizing, content */
+    box-sizing: content-box;
+}
+
+/* header */
+.header {
+    width: 100%;
+    height: auto;
+    /* border: 2px solid; 색상 미설정시 기본 검은색 */
+    box-sizing: border-box;
+    /* background-color: #000000; */
+    padding: 20px 0;
+}
+
+.header .nav {
+    width: 100%;
+    /* .nav width 최대 1200px */
+    max-width: 1200px;
+    height: auto;
+    /* 브라우저 너비가 1200px을 초과하면 가로가운데 */
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.clearClass::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 가상태그를 이용한 clear:both; */
+.header .nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header .nav h1.logo {
+    width: 120px;
+    height: 60px;
+    /* border: 1px solid #f270f7; */
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 58px;
+    /* 하나밖에 없으면 line-height */
+    background-color: #ffffff7e;
+    /* color: #ffffff; color 값을 a태그 부모에게 줘도 적용이 안된다. */
+    float: left;
+}
+
+.header .nav h1.logo a {
+    color: #000000;
+}
+
+.header .nav .gnb {
+    width: 500px;
+    height: auto;
+    /* border:  2px solid #5bdeff; */
+    float: right;
+}
+
+.header .nav .gnb>ul {
+    /* 큰일 -> flex */
+
+}
+
+/* .header .nav .gnb>ul>li::after{
+    content: '';
+    display: block;
+    clear: both;
+} */
+.header .nav .gnb>ul>li {
+    width: 20%;
+    height: 60px;
+    /* border: 1px solid #000000; */
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+    line-height: 58px;
+    color: #000000;
+    font-size: 14px;
+    /* 0.3초 동안 효과를 적용 */
+    transition: all 0.15s;
+    background-color: #ffffff7e;
+}
+
+.header .nav .gnb>ul>li:hover {
+    background-color: #f270f7;
+    color: #fffc42;
+    font-size: 20px;
+    cursor: pointer;
+    /* 손모양 */
+}
+
+.header .nav .gnb>ul>li a {
+    color: inherit;
+}
+
+/* container */
+.container {
+    width: 100%;
+    height: auto;
+    /* border: 2px solid #2c5a9e; */
+    box-sizing: border-box;
+    /* background-color: rgb(255, 255, 255); */
+    /* 값이 3개일 경우 -> 위, 좌우(동시), 아래 */
+    padding: 10px 0 20px;
+}
+
+.container .sections {
+    width: 100%;
+    max-width: 1600px;
+    height: auto;
+    /* border: 1px solid #cccccc; */
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* 값이 2개일 경우 -> 위아래, 좌우 */
+    padding: 20px 20px;
+    box-shadow: 1px 1px 10px #2222222a;
+}
+
+/* sec1 sec2 둘다에게 적용 */
+.container .sections .section {
+    font-size: 40px;
+    /* !import 동일 스타일 설정을 우선 적용 */
+    border: 5px solid !important;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.container .sections .section.sec1 {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #ff0000;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    line-height: 398px;
+}
+
+.container .sections .section.sec2 {
+    width: 100%;
+    max-width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    line-height: 298px;
+}
+
+/* footer */
+.footer {
+    width: 100%;
+    height: auto;
+    /* border: 2px solid hsl(39, 100%, 64%); */
+    box-sizing: border-box;
+    background-color: #4d4b4b;
+}
+
+.footer .fcon {
+    width: 100%;
+    max-width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    /* border: 2px solid #cccccc; */
+    box-sizing: border-box;
+    color: #ffffff;
+    text-align: center;
+    line-height: 98px;
+}

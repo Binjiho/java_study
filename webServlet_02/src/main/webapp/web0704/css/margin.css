@@ -1,0 +1,33 @@
+@import url("common/reset.css");
+
+.margin_parent {
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ff0000;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.margin_parent .margin_child {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+
+}
+
+.margin_parent .margin_child.one {
+    background-color: aqua;
+    /* margin-left: 100px;
+    margin-top: 100px; */
+}
+
+.margin_parent .margin_child.two {
+    background-color: yellowgreen;
+}
+
+.margin_parent .margin_child.three {
+    background-color: coral;
+}

@@ -1,0 +1,25 @@
+@import url("common/reset.css");
+
+.flex_container {
+    width: 600px;
+    height: auto;
+    border: 1px solid #ff0000;
+    margin: 0 auto;
+    display: flex;
+
+    flex-wrap: nowrap;
+}
+
+.flex_container .items {
+    width: 100px;
+    line-height: 40px;
+    border: 1px solid;
+    box-sizing: border-box;
+    /* float: left; */
+}
+
+.flex_container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
