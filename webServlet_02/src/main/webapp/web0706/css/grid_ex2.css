@@ -1,0 +1,48 @@
+@import url(common/reset.css);
+
+.container{
+    width: 100%;
+    height: auto;
+    border: 1px solid;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.container .shop{
+    flex-basis: 1600px;
+    height: auto;
+    border: 1px solid;
+}
+.container .shop h1.title{
+    background-color: rgb(89, 131, 248);
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+.container .shop .shop-con{
+    border: 1px solid;
+}
+.container .shop .shop-con >ul{
+    display: grid;
+    width: 100%;
+    height: auto;
+
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-rows: repeat(2,minmax(400px,auto)); */
+    grid-template-rows: repeat(2,auto); /* 이게 기본 */
+
+    /* grid-template-rows: minmax(400px,auto); */
+
+    /* 초과한 행에 대해 자동으로 알아서 사이즈를 설정해준다. */
+    grid-auto-rows: minmax(400px,auto);
+
+    gap: 10px;
+}
+.container .shop .shop-con >ul>li{
+    border: 1px solid #ff0000;
+}
+.container .shop .shop-con >ul>li img{
+    display: block;
+    width: 100%;
+    height: auto;
+}

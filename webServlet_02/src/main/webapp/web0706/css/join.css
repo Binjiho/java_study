@@ -1,0 +1,10 @@
+@import url(common/reset.css);
+@import url(common/header.css);
+@import url(container/joinContainer.css);
+@import url(common/footer.css);
+
+/* body{
+    background: url(../images/img_\ \(4\).jpg) no-repeat 50%/cover;
+    background-attachment: fixed;
+} */
+

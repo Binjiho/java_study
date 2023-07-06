@@ -15,7 +15,7 @@ import org.web.service.MemberSelect;
 import org.web.service.MemberService;
 import org.web.service.MemberUpdate;
 
-@WebServlet("*.do")
+//@WebServlet("*.do")
 public class BaseController extends HttpServlet{
 	@Override
 	public void init() throws ServletException {

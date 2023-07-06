@@ -1,0 +1,89 @@
+/* container */
+.container{
+    width: 100%;
+    height: auto;
+    /* border: 1px solid; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.container .join .join-con{
+    width: 500px;
+    height: auto;
+    border: 1px solid;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    border-radius: 30px;
+}
+.container .join .join-con table{
+    width: 100%;
+}
+table, tr, td, th{
+    border: 1px solid #cccccc;
+    border-collapse: collapse;
+}
+.container .join .join-con table thead tr th{
+    font-size: 30px;
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 0;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
+}
+.container .join .join-con table tbody tr td{
+    padding: 10px 0;
+}
+.container .join .join-con table tbody tr td label{
+    padding: 10px 0;
+}
+
+.container .join .join-con table tbody tr td .s1{
+    width: 99%;
+    height: 30px;
+}
+/* .container .join .join-con table tbody tr td .s2{
+    width: 48%;
+    height: 30px;
+} */
+
+.container .join .join-con table tbody tr td.email input[type=email]{
+    width: 69%;
+    height: 30px;
+    flex:3;
+}
+.container .join .join-con table tbody tr td.email input[type=button]{
+    width: 28%;
+    height: 30px;
+    flex:1;
+    background-color: black;
+    color: #cccccc;
+    text-align: center;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+.container .join .join-con table tfoot tr td{
+    text-align: center;
+}
+/* .container .join .join-con table tfoot tr td div.sub{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+} */
+.container .join .join-con table tfoot tr td .t1{
+    display: inline-block;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    /* 마우스 올렸을때(hover) 시간 */
+    transition: all 0.1s;
+}
+.container .join .join-con table tfoot tr td .t1:hover{
+    background-color: #ff0000;
+    color: antiquewhite;
+}
