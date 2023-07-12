@@ -1,0 +1,71 @@
+/*indexContainer*/
+.container{
+	width: 100%;
+}
+.container .index{
+	width: 100%;
+}
+.container .index .index-con{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding:10px 0;
+}
+.container .index .index-con .sections{
+	flex-basis:1600px;
+/* 	border: 1px solid; */
+}
+.container .index .index-con .sections .section{
+/* 	border: 1px solid; */
+	box-sizing: border-box;
+}
+.container .index .index-con .sections .section.sec1{
+	width: 100%;
+	height:600px;
+/* 	border: 1px solid; */
+	box-sizing: border-box;
+	background-color: #3c3a48;
+	color:#ffffff;
+	text-align: center;
+	line-height: 600px;
+	font-size: 50px
+}
+.container .index .index-con .sections .section.sec2{
+	display: flex;
+	justify-content: center;
+}
+.container .index .index-con .sections .section.sec2 .con{
+	flex-basis: 1400px;
+	border: 1px solid  #0e4e6c; 
+	box-sizing: border-box;
+	padding:10px;
+
+}
+.container .index .index-con .sections .section.sec2 .con>ul{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: minmax(auto, 300px);
+	grid-auto-rows: minmax(auto, 300px);
+	gap:10px;
+}
+.container .index .index-con .sections .section.sec2 .con>ul>li{	
+	border: 1px solid;
+	text-align: center;
+	line-height: 300px;
+	color: #ffffff;
+		background-color: #0e4e6c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

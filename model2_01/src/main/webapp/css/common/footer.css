@@ -1,0 +1,14 @@
+/*footer*/
+.footer{
+	background-color: #555555;
+	display: flex;
+	justify-content: center;
+}
+
+.footer .fcon{
+	flex-basis: 1400px;	
+	background-color: #222222;
+	color: #ffffff;
+	padding:100px 0;
+	text-align: center;
+}
